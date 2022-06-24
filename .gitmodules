@@ -1,0 +1,6 @@
+[submodule "lookoutvision-inference-src/third_party/opencv"]
+	path = lookoutvision-inference-src/third_party/opencv
+	url = https://github.com/opencv/opencv.git
+[submodule "lookoutvision-inference-src/third_party/grpc"]
+	path = lookoutvision-inference-src/third_party/grpc
+	url = https://github.com/grpc/grpc.git
