@@ -1,0 +1,27 @@
+# (c) 2022 Amazon Web Services, Inc. or its affiliates. All Rights Reserved.
+# This AWS Content is provided subject to the terms of the AWS Customer Agreement
+# available at http://aws.amazon.com/agreement or other written agreement between
+# Customer and Amazon Web Services, Inc.
+
+---
+RecipeFormatVersion: "2020-01-25"
+ComponentName: "{COMPONENT_NAME}"
+ComponentVersion: "{COMPONENT_VERSION}"
+ComponentDescription: "This is simple LFV Inference Client written in C++."
+ComponentPublisher: "{COMPONENT_AUTHOR}"
+ComponentDependencies:
+  aws.iot.lookoutvision.EdgeAgent:
+    VersionRequirement: ">=1.3.0 <3.0.0"
+    DependencyType: "HARD"
+ComponentConfiguration:
+  DefaultConfiguration:
+    Input: "</PATH/TO/LOCAL/IMAGE.PNG> or </PATH/TO/LOCAL/VIDEO.MP4> or <CAMERA ID like 0 or 1>"
+    Model: "<LOOKOUTVISION MODEL NAME>"
+Manifests:
+  - Platform:
+      os: all
+    Artifacts:
+      - URI: "s3://{BUCKET_NAME}/{COMPONENT_NAME}/{COMPONENT_VERSION}/aws.iot.lookoutvision.inference.zip"
+        Unarchive: ZIP
+    Lifecycle:
+      Run: "tar -xzf {artifacts:decompressedPath}/aws.iot.lookoutvision.inference/inference.tar.gz -C {work:path}/ && export PATH=$PATH:{work:path}/inference/bin && export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:{work:path}/inference/lib && ./{work:path}/inference/bin/main {configuration:/Input} {configuration:/Model}"

@@ -1,0 +1,16 @@
+{
+  "component": {
+    "aws.iot.lookoutvision.inference": {
+      "author": "AWS LookoutVision Inference",
+      "version": "0.1.1",
+      "build": {
+        "build_system": "zip"
+      },
+      "publish": {
+        "bucket": "<PLACEHOLDER_BUCKET>",
+        "region": "<PLACEHOLDER_REGION>"
+      }
+    }
+  },
+  "gdk_version": "1.0.0"
+}
