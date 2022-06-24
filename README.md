@@ -1,4 +1,4 @@
-## Amazon Lookout for Vision at Edge C++ Inference Client with AWS IoT Greengrass Component
+## Amazon Lookout for Vision at Edge C++ Inference Client with AWS IoT Greengrass V2 Component
 
 ### Introduction
 This repository shows an example of creating an [AWS IoT Greengrass V2 Component](https://aws.amazon.com/greengrass/) for [Amazon Lookout for Vision](https://aws.amazon.com/lookout-for-vision/) Inference Client using C++. The task of this component is to run Inference for Amazon Lookout for Vision model in an IoT device. This build creates an automated way to build Inference binaries and also create the AWS IoT Greengrass V2 Component using [GDK CLI](https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-development-kit-cli.html) which uses the binaries to run Inference and generate results.
@@ -49,7 +49,7 @@ This repository shows an example of creating an [AWS IoT Greengrass V2 Component
 ### Pre-requisites:
 - AWS Console access and [AWS CLI](https://aws.amazon.com/cli/)
 - Run `$ aws configure` and add the right AWS Credentials
-- Setup [AWS Identity and Access Management (IAM) Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) for AWS IoT Greengrass V2 to access Amazon S3 bucket and Amazon Lookout for Vision to access AWS IoT Greengrass and Amazon S3 bucket
+- Setup [AWS Identity and Access Management (IAM) Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) for AWS IoT Greengrass V2 to access Amazon S3 bucket and Amazon Lookout for Vision to access AWS IoT Greengrass V2 and Amazon S3 bucket
 - [Amazon Lookout for Vision model compiled for IoT Edge deployment](https://aws.amazon.com/blogs/machine-learning/amazon-lookout-for-vision-now-supports-visual-inspection-of-product-defects-at-the-edge/) and create an AWS IoT Greengrass V2 Component of the model
 - IoT Device is setup with AWS IoT Greengrass V2
 - Understanding of C++ Coding and Bash scripts
